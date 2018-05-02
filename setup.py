@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='drf-cached-token',
-    version='0.0.1',
+    version='0.1.0',
     author='Michal Bock',
     author_email='michal.bock@gmail.com',
     packages=['drf_cached_token'],

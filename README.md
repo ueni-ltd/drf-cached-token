@@ -8,7 +8,7 @@ Installation
 * Install using pip:
 
     ```bash
-    pip install -e git+https://github.com/ueni-ltd/drf-cached-token.git@v0.0.1#egg=drf_cached_token
+    pip install -e git+https://github.com/ueni-ltd/drf-cached-token.git@v0.1.0#egg=drf_cached_token
     ```
 
 * Add ``drf_cached_token`` to ``INSTALLED_APPS`` in ``settings.py``:
@@ -32,7 +32,7 @@ Installation
     }
     ```
 
-    * `TIMEOUT` - specified in seconds.
+    * `TIMEOUT` - timeout for keys in the cache specified in seconds.
 
     * `BACKEND` - name of the django cache used to store the tokens.    
 
