@@ -13,4 +13,4 @@ def get_cache_key(key):
 
 def clear_cache():
     cache = get_cache()
-    cache.delete('drf_cached_token*')
+    cache.delete_pattern('drf_cached_token*')

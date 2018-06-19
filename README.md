@@ -8,7 +8,7 @@ Installation
 * Install using pip:
 
     ```bash
-    pip install -e git+https://github.com/ueni-ltd/drf-cached-token.git@v0.1.0#egg=drf_cached_token
+    pip install -e git+https://github.com/ueni-ltd/drf-cached-token.git@v0.1.1#egg=drf_cached_token
     ```
 
 * Add ``drf_cached_token`` to ``INSTALLED_APPS`` in ``settings.py``:

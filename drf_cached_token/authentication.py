@@ -1,8 +1,11 @@
+import logging
 from rest_framework.authentication import TokenAuthentication
 
 from .cache import get_cache
 from .cache import get_cache_key
 from . import settings
+
+logger = logging.getLogger()
 
 
 class QueryParamsTokenAuthenticationMixin:
@@ -24,7 +27,12 @@ class CachedTokenAuthentication(TokenAuthentication):
     def authenticate_credentials(self, key):
         cache = get_cache()
         cache_key = get_cache_key(key)
-        token = cache.get(cache_key)
+        try:
+            token = cache.get(cache_key)
+        except Exception as e:
+            logger.exception('Failed to retrieve token from cache. Reason %s', e)
+            return super().authenticate_credentials(key)
+
         if token is None:
             user, token = super().authenticate_credentials(key)
             cache.set(cache_key, token, timeout=settings.TIMEOUT)
